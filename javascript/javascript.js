@@ -1,0 +1,110 @@
+const productos =[
+    {
+        id: 1,
+        nombre: "Jean baggy",
+        categoria: "Pantalon",
+        precio: 45000
+
+    },
+    {
+        id: 2,
+        nombre: "Jean slim fit",
+        categoria: "Pantalon",
+        precio: 40000
+
+
+    },
+    {
+        id: 3,
+        nombre: "Remera oversize",
+        categoria: "Remera",
+        precio: 10000
+
+
+    },
+    {
+        id: 4,
+        nombre: "Remera regular",
+        categoria: "Remera",
+        precio: 9000
+
+
+    },
+    {
+        id: 5,
+        nombre: "Buzo",
+        categoria: "Abrigo",
+        precio: 50000
+
+
+    },
+    {
+        id: 6,
+        nombre: "Campera",
+        categoria: "Abrigo",
+        precio: 100000
+
+
+    },
+]
+let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+const productsContainer = document.getElementById("cont-productos");
+
+const contenedorFiltros = document.getElementById("cont-filtro");
+console.log(contenedorFiltros)
+
+const categorias = [...new Set(productos.map(p => p.categoria))];
+
+
+
+const botonTodos = document.createElement("button");
+botonTodos.textContent = "Todos";
+botonTodos.dataset.categoria = "Todos";
+contenedorFiltros.appendChild(botonTodos);
+
+
+
+for (const categoria of categorias) {
+
+    const boton = document.createElement("button");
+
+    boton.textContent = categoria;
+    boton.dataset.categoria = categoria;
+
+    contenedorFiltros.appendChild(boton);
+}
+
+
+
+function renderProductos (productsArray) {
+     productsContainer.innerHTML = "";
+    productsArray.forEach(producto => {
+        const card = document.createElement("div")   
+        card.innerHTML = `<h3>${producto.nombre}</h3>
+                          <h4>${producto.precio}</h4>
+                          <button class="productoAgregar" id="${producto.id}">Agregar</button>`
+        productsContainer.appendChild(card)
+    })
+
+}
+renderProductos(productos)
+contenedorFiltros.addEventListener("click", (e) => {
+
+    if (!e.target.dataset.categoria) return;
+
+    const categoria = e.target.dataset.categoria;
+
+    if (categoria === "Todos") {
+        renderProductos(productos);
+    } else {
+        const filtrados = productos.filter(
+            p => p.categoria === categoria
+        );
+
+        renderProductos(filtrados);
+    }
+});
+
+
+
