@@ -1,54 +1,39 @@
+
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
+const contenedor = document.getElementById("carrito");
+const botonVaciar = document.getElementById("vaciar-carrito");
+const totalElemento = document.getElementById("total");
 
 
 
-const botonvaciar = document.getElementById("vaciar-carrito");
-
-
-function agregarAlCarrito(producto){
-let existe = false;
-
-for(const item of carrito) {
-    if (item.id === productos.id) {
-        
-        item.cantidad++;
-
-        existe = true;
-    }
-}
-if (!existe) {
-
-    carrito.push({
-
-        id: producto.id,
-        nombre: producto.nombre,
-        precio: productos.precio,
-        cantidad: 1
-
-
-    });
-    guardarCarrito();
-}
-}
 function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
-
 }
 
-function renderCarrito(){
-    const contenedor = document.getElementById("carrito");
+
+
+function renderCarrito() {
+
     contenedor.innerHTML = "";
 
-    for(const item of carrito) {
+    if (carrito.length === 0) {
+        contenedor.textContent = "El carrito está vacío";
+        totalElemento.textContent = "Total $0";
+        return;
+    }
+
+    for (const item of carrito) {
         const p = document.createElement("p");
-        p.textContent.Content = `${item.nombre} x ${item.cantidad}`;
+        p.textContent = `${item.nombre} x ${item.cantidad} - $${item.precio}`;
         contenedor.appendChild(p);
     }
 
-    mostrarTotal()
+    mostrarTotal();
 }
+
+
 
 function mostrarTotal() {
     let total = 0;
@@ -57,38 +42,21 @@ function mostrarTotal() {
         total += item.precio * item.cantidad;
     }
 
-    document.getElementById("total").textContent = "total $" + total;
-
-
+    totalElemento.textContent = "Total $" + total;
 }
 
-renderCarrito();
 
-document.addEventListener("click", function (e){
-    if (e.target.tagName === "BUTTON" && e.target.dataset.id) {
-        const id = Number(e.target.dataset.id);
-
-        let productoSeleccionado = null;
-
-        for (const producto of productos) {
-
-            if (producto.id === id) {
-                productoSeleccionado = producto;
-            } 
-        }
-        
-        if(productoSeleccionado) {
-
-            agregarAlCarrito(productoSeleccionado);
-        }
-    }
-
-});
 
 function vaciarCarrito() {
     carrito = [];
     localStorage.removeItem("carrito");
+    renderCarrito();
 }
 
-botonvaciar.addEventListener("click", vaciarCarrito);
 
+
+botonVaciar.addEventListener("click", vaciarCarrito);
+
+
+
+renderCarrito();
