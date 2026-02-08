@@ -1,5 +1,3 @@
-
-
 const productos = [
     { id: 1, nombre: "Jean baggy", categoria: "Pantalon", precio: 45000 },
     { id: 2, nombre: "Jean slim fit", categoria: "Pantalon", precio: 40000 },
