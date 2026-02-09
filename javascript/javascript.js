@@ -85,7 +85,7 @@ function agregarAlCarrito(id) {
     }
 
     guardarCarrito();
-    console.log("Carrito:", carrito);
+   
 }
 
 function crearBotonesFiltros() {
