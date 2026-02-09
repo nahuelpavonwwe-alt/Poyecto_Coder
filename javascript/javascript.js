@@ -20,11 +20,13 @@ carrito = carrito.map(item => ({
 
 
 
+
+
 const productsContainer = document.getElementById("cont-productos");
+
 const contenedorFiltros = document.getElementById("cont-filtro");
 
-
-
+const buscador = document.getElementById("buscador");
 
 const categorias = [...new Set(productos.map(p => p.categoria))];
 
@@ -36,6 +38,7 @@ function renderProductos(productsArray) {
 
     for (const producto of productsArray) {
         const card = document.createElement("div");
+        card.classList.add("product-card");
 
         card.innerHTML = `
             <h3>${producto.nombre}</h3>
@@ -48,6 +51,18 @@ function renderProductos(productsArray) {
         productsContainer.appendChild(card);
     }
 }
+
+function buscarProductos(texto) {
+
+    const textoLower = texto.toLowerCase();
+
+    const productosFiltrados = productos.filter(producto =>
+        producto.nombre.toLowerCase().includes(textoLower)
+    );
+
+    renderProductos(productosFiltrados);
+}
+
 
 function guardarCarrito() {
     localStorage.setItem("carrito", JSON.stringify(carrito));
@@ -118,6 +133,9 @@ productsContainer.addEventListener("click", (e) => {
     agregarAlCarrito(id);
 });
 
+buscador.addEventListener("input", (e) => {
+    buscarProductos(e.target.value);
+});
 
 
 

@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Gill Sans', sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#buscador {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    width: 300px;
+}
+#cont-filtro {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#cont-filtro button {
+    margin: 5px;
+    padding: 8px 12px;
+    cursor: pointer;
+}
+#cont-productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+.product-card {
+    background: white;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.product-card button {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: black;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.product-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    border-radius: 8px;
+}
+h2{text-align: center;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    padding: 8px 12px;
+    display: inline-block;
+    background-color: rgb(171, 210, 243);
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    
+}
+.btn-carrito {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.2s;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.btn-carrito:hover {
+    background-color: #333;
+}
