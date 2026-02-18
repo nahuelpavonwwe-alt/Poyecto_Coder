@@ -28,8 +28,14 @@ const contenedorFiltros = document.getElementById("cont-filtro");
 
 const buscador = document.getElementById("buscador");
 
-const categorias = [...new Set(productos.map(p => p.categoria))];
+const categorias = [];
 
+productos.forEach(producto => {
+
+    if (!categorias.includes(producto.categoria)) {
+        categorias.push(producto.categoria);
+    }
+});
 
 
 

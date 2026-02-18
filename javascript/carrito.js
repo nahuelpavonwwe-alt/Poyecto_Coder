@@ -23,25 +23,20 @@ function renderCarrito() {
         return;
     }
 
-    for (const item of carrito) {
+    carrito.forEach(item => {
         const p = document.createElement("p");
-        p.textContent = `${item.nombre} x ${item.cantidad} - $${item.precio}`;
+        p.textContent = `${item.nombre} x ${item.cantidad}`;
         contenedor.appendChild(p);
-    }
-
+        
+    });
     mostrarTotal();
 }
 
-
-
 function mostrarTotal() {
-    let total = 0;
-
-    for (const item of carrito) {
-        total += item.precio * item.cantidad;
-    }
-
-    totalElemento.textContent = "Total $" + total;
+    const total = carrito.reduce((acumulador, item) => {
+        return acumulador + item.precio * item.cantidad;
+    }, 0);
+    totalElemento.textContent = `Total $${total}`;
 }
 
 
