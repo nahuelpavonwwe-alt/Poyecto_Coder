@@ -1,14 +1,24 @@
-const productos = [
-    { id: 1, nombre: "Jean baggy", categoria: "Pantalon", precio: 45000 },
-    { id: 2, nombre: "Jean slim fit", categoria: "Pantalon", precio: 40000 },
-    { id: 3, nombre: "Remera oversize", categoria: "Remera", precio: 10000 },
-    { id: 4, nombre: "Remera regular", categoria: "Remera", precio: 9000 },
-    { id: 5, nombre: "Buzo", categoria: "Abrigo", precio: 50000 },
-    { id: 6, nombre: "Campera", categoria: "Abrigo", precio: 100000 }
-];
+let productos = [];
 
+fetch("./db/productos.json")
+    .then(response => response.json())
+    .then(data => {
 
+        productos = data;
 
+        renderProductos(productos);
+
+        const categorias = [];
+
+        productos.forEach(producto => {
+            if (!categorias.includes(producto.categoria)) {
+                categorias.push(producto.categoria);
+            }
+        });
+
+       crearBotonesFiltros(categorias, productos); 
+    })
+    .catch(error => console.log("Error al cargar productos: ", error))
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
@@ -36,8 +46,6 @@ productos.forEach(producto => {
         categorias.push(producto.categoria);
     }
 });
-
-
 
 function renderProductos(productsArray) {
     productsContainer.innerHTML = "";
@@ -94,7 +102,8 @@ function agregarAlCarrito(id) {
    
 }
 
-function crearBotonesFiltros() {
+
+function crearBotonesFiltros(categorias, productos) {
 
     
     const botonTodos = document.createElement("button");
@@ -109,6 +118,7 @@ function crearBotonesFiltros() {
         contenedorFiltros.appendChild(boton);
     }
 }
+
 
 
 
@@ -145,5 +155,5 @@ buscador.addEventListener("input", (e) => {
 
 
 
-crearBotonesFiltros();
+
 renderProductos(productos);

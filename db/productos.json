@@ -1,0 +1,41 @@
+
+    
+[
+    { 
+        "id": 1, 
+        "nombre": "Jean baggy", 
+        "categoria": "Pantalon", 
+        "precio": 45000 
+    },
+    {   "id": 2,
+        "nombre":"Jean slim fit",
+        "categoria": "Pantalon",
+        "precio": 40000 
+    },
+    { 
+        "id": 3, 
+        "nombre": "Remera oversize", 
+        "categoria": "Remera", 
+        "precio": 10000 },
+
+    { 
+        "id": 4,
+        "nombre": "Remera regular",
+        "categoria": "Remera",
+        "precio": 9000 
+    },
+
+    { 
+        "id": 5,
+        "nombre": "Buzo",
+        "categoria": "Abrigo",
+        "precio": 50000 
+    },
+
+    { 
+        "id": 6,
+        "nombre": "Campera",
+        "categoria": "Abrigo",
+        "precio": 100000 
+    }
+]
