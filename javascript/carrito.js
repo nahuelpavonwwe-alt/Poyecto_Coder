@@ -173,3 +173,6 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
 
 
 renderCarrito();
+
+
+//Falta  arreglar el campo cuando queda en blanco que no avisa que los campos son obligatorios y no se genera la factura poniendo los datos
