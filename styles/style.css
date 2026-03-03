@@ -99,7 +99,7 @@ text-align: center;
     margin:30px auto;
     padding:10px 20px;
     border:none;
-    background:#e63946;
+    background:#c40c1b;
     color:rgb(0, 0, 0);
     font-size:16px;
     border-radius:6px;
@@ -110,3 +110,35 @@ text-align: center;
     background:#c1121f;
 }
 
+.btn-confirmar {
+    display: flex;
+    gap: 8px;
+
+}
+
+
+#btn-volver {
+    display: inline-block;
+    padding:10px 10px;
+    border:none;
+    background:#000000;
+    color:rgb(253, 253, 253);
+    font-size:16px;
+    text-decoration: none;
+    border-radius:6px;
+      cursor:pointer;
+
+}
+
+#btn-comprar {
+    display:block;
+    margin:30px auto;
+    padding:10px 10px;
+    border:none;
+    background:#0cca45;
+    color:rgb(0, 0, 0);
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+    
+}

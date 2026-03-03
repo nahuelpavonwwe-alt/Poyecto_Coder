@@ -101,7 +101,74 @@ function renderCarrito() {
     })
 }
 
+function crearFactura (nombre, direccion) {
+    if (carrito.length === 0) {
+        Swal.fire("El carrito esta vacio", "", "warning");
+        return;
+    }
+
+    const total = calcularTotal(); 
+
+    let listaProductos = "";
+
+    for(let i = 0; i < carrito.length; i++) {
+        listaProductos += `
+        <li>
+        ${carrito[i].nombre} x ${carrito[i].cantidad}
+        </li>
+
+        `;
+        }
+        Swal.fire({
+            title: "Factura generada",
+            html: `
+            <p><strong>Cliente:</strong> ${nombre}</p>
+            <p><strong>Direccion:</strong> ${direccion}</p>
+            <ul>${listaProductos}</ul>
+            <p><strong>Total:</strong> $${total}</p>
+            `,
+
+            icon: "succes"
+        });
+}
+
+
+
+
+
 botonVaciar.addEventListener("click", vaciarCarrito);
+
+document.getElementById("btn-comprar").addEventListener("click", () => {
+
+    swal.fire({
+        title: "Datos del cliente",
+        html:`
+        <input id="swal-nombre" class="swal2-input" placeholder="Nombre">
+        <input id="swal-direccion" class="swal2-input" placeholder="direccion">
+        `,
+        confirmButtonText: "Generar factura",
+        focusConfirm: false,
+        preConfirm: () => {
+            const nombre = document.getElementById("swal-nombre").value;
+            const direccion = document.getElementById("swal-direccion").value;
+
+
+            if (!nombre || !direccion) {
+                swal.showValidationMesssage("Todos los campos son obligatorios");
+                return false;
+            }
+            return{ nombre, direccion };
+        }
+
+    }).then((result) => {
+
+        if (result.isConfirmed){
+        const { nombre, direccion } = result.value;
+        
+        crearFactura (nombre,direccion);
+        }
+    });
+});
 
 
 
