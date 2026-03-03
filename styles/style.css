@@ -51,17 +51,16 @@ h1 {
     padding: 15px;
     border-radius: 8px;
 }
-h2{text-align: center;
-    margin-bottom: 20px;
-    margin-top: 10px;
-    padding: 8px 12px;
-    display: inline-block;
-    background-color: rgb(171, 210, 243);
-    color: rgb(0, 0, 0);
-    border: none;
-    cursor: pointer;
-    
+h2{
+    text-align: center;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
 }
+
+    
+
 .btn-carrito {
     display: inline-block;
     padding: 10px 18px;
@@ -78,3 +77,36 @@ h2{text-align: center;
 .btn-carrito:hover {
     background-color: #333;
 }
+ 
+#carrito {
+    
+
+color: rgb(0, 0, 0);
+text-align: center;   
+   
+}
+
+#total {
+
+
+color: rgb(0, 0, 0);
+text-align: center; 
+    
+}
+
+#vaciar-carrito{
+    display:block;
+    margin:30px auto;
+    padding:10px 20px;
+    border:none;
+    background:#e63946;
+    color:rgb(0, 0, 0);
+    font-size:16px;
+    border-radius:6px;
+    cursor:pointer;
+}
+
+#vaciar-carrito:hover{
+    background:#c1121f;
+}
+

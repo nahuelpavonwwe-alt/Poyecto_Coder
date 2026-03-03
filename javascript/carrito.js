@@ -85,12 +85,6 @@ function renderCarrito() {
         return;
     }
 
-    carrito.forEach(item => {
-        const p = document.createElement("p");
-        p.textContent = `${item.nombre} x ${item.cantidad}`;
-        contenedor.appendChild(p);
-        
-    });
     mostrarTotal();
 
     carrito.forEach(item => {
