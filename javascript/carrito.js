@@ -112,7 +112,7 @@ function calcularTotal() {
     return total;
 }
 
-function crearFactura (nombre, calle, altura) {
+function crearFactura (nombre, calle, altura, metodo) {
    
 
     const total = calcularTotal(); 
@@ -135,6 +135,7 @@ function crearFactura (nombre, calle, altura) {
             <p><strong>Altura:</strong> ${altura}</p>
             <ul>${listaProductos}</ul>
             <p><strong>Total:</strong> $${total}</p>
+            <p><strong>Metodo de pago :</strong> ${metodo}</p>
             `,
 
             icon: "success",
@@ -168,14 +169,68 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
         <input id="swal-nombre" class="swal2-input" placeholder="Nombre">
         <input id="swal-calle" class="swal2-input" placeholder="calle">
         <input id="swal-altura" class="swal2-input" placeholder="altura">
+        <div style="text-align:left;">
+            <label><input type="radio" name="metodo" value="efectivo"> Efectivo</label>
+            <label><input type="radio" name="metodo" value="transferencia"> Transferencia</label>
+            <label><input type="radio" name="metodo" value="tarjeta"> Tarjeta</label>
+        </div>
+
+        <div id="datosTarjeta" style="display:none;">
+            <input id="numeroTarjeta" class="swal2-input" placeholder="Numero de tarjeta :">
+            <input id="cvv" class="swal2-input" placeholder="CVV :">
+        </div>
+
+         <div id="datosTransferencia" style="display:none; margin-top:10px;">
+            <p><sstrong>Alias para transferencia</strong></p>
+            <p>mi.negocio.clothing</p>
+            <p>BANCO SASNTANDER RIO</p>
+        </div>
+
+        <div id="datosEfectivo" style="display:none; margin-top:10px;">
+            <p><sstrong>Datos para efectivo</strong></p>
+            <p>Acerquese al Rapipago mas cercano con este numero</p>
+            <p>00002323204242</p>
+            <p>(Puede tardar 24hs habiles en acreditarse)</p>
+        </div>
         `,
         confirmButtonText: "Generar factura",
         focusConfirm: false,
+        didOpen: () => {
+
+                const radios = document.querySelectorAll('input[name="metodo"]');
+                const datosTarjeta = document.getElementById("datosTarjeta");
+
+                radios.forEach(radio => {
+                    radio.addEventListener("change", () => {
+                        switch(radio.value){
+                            case "tarjeta":
+                                datosTarjeta.style.display = "block";
+                                datosTransferencia.style.display = "none";
+                                datosEfectivo.style.display = "none";
+                                break;
+                                
+                             case "transferencia":
+                                datosTransferencia.style.display = "block";
+                                datosTarjeta.style.display = "none";
+                                datosEfectivo.style.display = "none";
+                                
+                                break;
+
+                            case "efectivo":
+                                datosEfectivo.style.display = "block";
+                                datosTransferencia.style.display = "none";
+                                datosTarjeta.style.display = "none";
+                                break;
+                        }
+                    });
+                });
+
+            },
         preConfirm: () => {
             const nombre = document.getElementById("swal-nombre").value.trim();
             const calle = document.getElementById("swal-calle").value.trim();
             const altura = document.getElementById("swal-altura").value.trim();
-
+            const metodo = Swal.getPopup().querySelector('input[name="metodo"]:checked');
 
             if (!nombre || !calle || !altura) {
                 Swal.showValidationMessage("Es obligatorio rellenar los campos");
@@ -191,15 +246,23 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
                 Swal.showValidationMessage("calle Invalida");
                 return false;
             }
-            return{ nombre, calle, altura };
+
+            if (!metodo) {
+                Swal.showValidationMessage("Seleccione un metodo de pago");
+                return false;
+            }
+            
+            
+            return{ nombre, calle, altura, metodo: metodo.value };
+
         }
 
     }).then((result) => {
 
         if (result.isConfirmed){
-        const { nombre, calle, altura } = result.value;
+        const { nombre, calle, altura, metodo } = result.value;
         
-        crearFactura (nombre,calle, altura);
+        crearFactura (nombre,calle, altura, metodo);
         }
     });
 
@@ -211,4 +274,3 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
 renderCarrito();
 
 
-//Falta  arreglar el campo cuando queda en blanco que no avisa que los campos son obligatorios y no se genera la factura poniendo los datos
