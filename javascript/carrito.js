@@ -101,11 +101,19 @@ function renderCarrito() {
     })
 }
 
-function crearFactura (nombre, direccion) {
-    if (carrito.length === 0) {
-        Swal.fire("El carrito esta vacio", "", "warning");
-        return;
+function calcularTotal() {
+
+    let total = 0;
+
+    for (const item of carrito) {
+        total += item.precio * item.cantidad;
     }
+
+    return total;
+}
+
+function crearFactura (nombre, calle, altura) {
+   
 
     const total = calcularTotal(); 
 
@@ -123,13 +131,22 @@ function crearFactura (nombre, direccion) {
             title: "Factura generada",
             html: `
             <p><strong>Cliente:</strong> ${nombre}</p>
-            <p><strong>Direccion:</strong> ${direccion}</p>
+            <p><strong>Calle:</strong> ${calle}</p>
+            <p><strong>Altura:</strong> ${altura}</p>
             <ul>${listaProductos}</ul>
             <p><strong>Total:</strong> $${total}</p>
             `,
 
-            icon: "succes"
+            icon: "success",
+            confirmButtonText: "Aceptar"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                vaciarCarrito() 
+            }
+            
         });
+  
+
 }
 
 
@@ -140,34 +157,53 @@ botonVaciar.addEventListener("click", vaciarCarrito);
 
 document.getElementById("btn-comprar").addEventListener("click", () => {
 
-    swal.fire({
+     if (carrito.length === 0) {
+        Swal.fire("El carrito esta vacio", "", "warning");
+        return;
+    }
+
+    Swal.fire({
         title: "Datos del cliente",
         html:`
         <input id="swal-nombre" class="swal2-input" placeholder="Nombre">
-        <input id="swal-direccion" class="swal2-input" placeholder="direccion">
+        <input id="swal-calle" class="swal2-input" placeholder="calle">
+        <input id="swal-altura" class="swal2-input" placeholder="altura">
         `,
         confirmButtonText: "Generar factura",
         focusConfirm: false,
         preConfirm: () => {
-            const nombre = document.getElementById("swal-nombre").value;
-            const direccion = document.getElementById("swal-direccion").value;
+            const nombre = document.getElementById("swal-nombre").value.trim();
+            const calle = document.getElementById("swal-calle").value.trim();
+            const altura = document.getElementById("swal-altura").value.trim();
 
 
-            if (!nombre || !direccion) {
-                swal.showValidationMesssage("Todos los campos son obligatorios");
+            if (!nombre || !calle || !altura) {
+                Swal.showValidationMessage("Es obligatorio rellenar los campos");
                 return false;
             }
-            return{ nombre, direccion };
+
+            if(!/^\d+$/.test(altura) || parseInt(altura) <= 0) {
+                Swal.showValidationMessage("Altura Invalida");
+                return false;
+            }
+            
+            if (calle.length < 2) {
+                Swal.showValidationMessage("calle Invalida");
+                return false;
+            }
+            return{ nombre, calle, altura };
         }
 
     }).then((result) => {
 
         if (result.isConfirmed){
-        const { nombre, direccion } = result.value;
+        const { nombre, calle, altura } = result.value;
         
-        crearFactura (nombre,direccion);
+        crearFactura (nombre,calle, altura);
         }
     });
+
+    
 });
 
 
