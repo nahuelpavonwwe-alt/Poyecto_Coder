@@ -230,7 +230,9 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
             const nombre = document.getElementById("swal-nombre").value.trim();
             const calle = document.getElementById("swal-calle").value.trim();
             const altura = document.getElementById("swal-altura").value.trim();
-            const metodo = Swal.getPopup().querySelector('input[name="metodo"]:checked');
+            const metodo = Swal.getPopup().querySelector('input[name="metodo"]:checked')?.value;
+            const numeroTarjeta = document.getElementById("numeroTarjeta")?.value;
+            const cvv = document.getElementById("cvv")?.value;
 
             if (!nombre || !calle || !altura) {
                 Swal.showValidationMessage("Es obligatorio rellenar los campos");
@@ -251,12 +253,27 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
                 Swal.showValidationMessage("Seleccione un metodo de pago");
                 return false;
             }
+            if (metodo === "tarjeta") {
+                if (!numeroTarjeta || !cvv) {
+                    Swal.showValidationMessage("Es obligatorio introducir los datos de la tarjeta")
+                    return false;
+                    }
+
+                if (!/^\d+$/.test(numeroTarjeta)) {
+                    Swal.showValidationMessage("El numero de tarjeta solo debe tener numeros")
+                    return false;
+                }
+
+                if (!/^\d+$/.test(cvv)) {
+                    Swal.showValidationMessage("El numero de seguridad solo debe tener numeros y ser menor a 5 digitos")
+                    return false;
+                }
             
-            
-            return{ nombre, calle, altura, metodo: metodo.value };
+
+            return{ nombre, calle, altura, metodo };
 
         }
-
+    }
     }).then((result) => {
 
         if (result.isConfirmed){

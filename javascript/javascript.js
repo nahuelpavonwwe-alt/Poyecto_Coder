@@ -1,6 +1,6 @@
 let productos = [];
-
-fetch("./db/productos.json")
+const url = "./db/productos.json"
+fetch(url)
     .then(response => response.json())
     .then(data => {
 
@@ -18,7 +18,13 @@ fetch("./db/productos.json")
 
        crearBotonesFiltros(categorias, productos); 
     })
-    .catch(error => console.log("Error al cargar productos: ", error))
+    .catch(error => {
+        Swal.fire(
+        "Error",
+        "No se pudieron cargar los productos. Intente nuevamente más tarde.",
+        "error"
+        );
+    });
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
