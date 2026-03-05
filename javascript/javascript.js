@@ -77,7 +77,8 @@ function buscarProductos(texto) {
     const textoLower = texto.toLowerCase();
 
     const productosFiltrados = productos.filter(producto =>
-        producto.nombre.toLowerCase().includes(textoLower)
+        producto.nombre.toLowerCase().includes(textoLower) ||
+        producto.categoria.toLowerCase().includes(textoLower)
     );
 
     renderProductos(productosFiltrados);

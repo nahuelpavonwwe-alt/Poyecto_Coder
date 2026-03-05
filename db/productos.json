@@ -34,8 +34,52 @@
 
     { 
         "id": 6,
-        "nombre": "Campera",
+        "nombre": "Campera Bomber",
         "categoria": "Abrigo",
         "precio": 100000 
+    },
+
+    { 
+        "id": 7,
+        "nombre": "Sweater",
+        "categoria": "Abrigo",
+        "precio": 70000 
+    },
+
+    { 
+        "id": 8,
+        "nombre": "Musculosa",
+        "categoria": "Remera",
+        "precio": 7500
+    },
+
+    { 
+        "id": 9,
+        "nombre": "Pantalon Corderoy",
+        "categoria": "Pantalon",
+        "precio": 65000 
+    },
+
+    { 
+        "id": 10,
+        "nombre": "Medias altas pack 3 unidades",
+        "categoria": "Ropa interior",
+        "precio": 8000
+    },
+
+     { 
+        "id": 11,
+        "nombre": "Boxer pack 3 unidades",
+        "categoria": "Ropa interior",
+        "precio": 9000
+    },
+
+     { 
+        "id": 12,
+        "nombre": "Medias Invisibles pack 3 unidades",
+        "categoria": "Ropa interior",
+        "precio": 7000
     }
+
+
 ]

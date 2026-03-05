@@ -46,7 +46,7 @@ function mostrarTotal() {
     const total = carrito.reduce((acumulador, item) => {
         return acumulador + item.precio * item.cantidad;
     }, 0);
-    totalElemento.textContent = `Total $${total}`;
+    totalElemento.textContent = `Total : $${total}`;
 }
 
 
@@ -134,7 +134,7 @@ function crearFactura (nombre, calle, altura, metodo) {
             <p><strong>Calle:</strong> ${calle}</p>
             <p><strong>Altura:</strong> ${altura}</p>
             <ul>${listaProductos}</ul>
-            <p><strong>Total:</strong> $${total}</p>
+            <p><strong>Total: </strong> $${total}</p>
             <p><strong>Metodo de pago :</strong> ${metodo}</p>
             `,
 
@@ -169,10 +169,10 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
         <input id="swal-nombre" class="swal2-input" placeholder="Nombre">
         <input id="swal-calle" class="swal2-input" placeholder="calle">
         <input id="swal-altura" class="swal2-input" placeholder="altura">
-        <div style="text-align:left;">
-            <label><input type="radio" name="metodo" value="efectivo"> Efectivo</label>
-            <label><input type="radio" name="metodo" value="transferencia"> Transferencia</label>
-            <label><input type="radio" name="metodo" value="tarjeta"> Tarjeta</label>
+        <div class="radio-pago" style="text-align:left;">
+            <label><input type="radio" name="metodo" value="efectivo"> Efectivo 💵</label>
+            <label><input type="radio" name="metodo" value="transferencia"> Transferencia 🏦</label>
+            <label><input type="radio" name="metodo" value="tarjeta"> Tarjeta 💳</label>
         </div>
 
         <div id="datosTarjeta" style="display:none;">
@@ -181,7 +181,7 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
         </div>
 
          <div id="datosTransferencia" style="display:none; margin-top:10px;">
-            <p><sstrong>Alias para transferencia</strong></p>
+            <p><sstrong>Alias para transferencia :</strong></p>
             <p>mi.negocio.clothing</p>
             <p>BANCO SASNTANDER RIO</p>
         </div>
