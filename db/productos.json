@@ -5,80 +5,181 @@
         "id": 1, 
         "nombre": "Jean baggy", 
         "categoria": "Pantalon", 
-        "precio": 45000 
+        "precio": 45000,
+        "variantes" : [
+            {"idvariable": "1-ng-s","talle": "S", "color": "Negro", "stock" : 3},
+            {"idvariable": "1-ng-m","talle": "M", "color": "Negro", "stock" : 3},
+            {"idvariable": "1-ng-l","talle": "L", "color": "Negro", "stock" : 3},
+
+            {"idvariable": "1-az-s", "talle": "S", "color": "Azul", "stock" : 3},
+            {"idvariable": "1-az-m","talle": "M", "color": "Azul", "stock" : 3},
+            {"idvariable": "1-az-l","talle": "L", "color": "Azul", "stock" : 3}
+
+        ]
     },
     {   "id": 2,
         "nombre":"Jean slim fit",
         "categoria": "Pantalon",
-        "precio": 40000 
+        "precio": 40000,
+        "variantes" : [
+            {"idvariable": "2-ng-s","talle": "S", "color": "Negro", "stock" : 3},
+            {"idvariable": "2-ng-m","talle": "M", "color": "Negro", "stock" : 3},
+            {"idvariable": "2-ng-l","talle": "L", "color": "Negro", "stock" : 3},
+
+            {"idvariable": "2-az-s", "talle": "S", "color": "Azul", "stock" : 3},
+            {"idvariable": "2-az-m","talle": "M", "color": "Azul", "stock" : 3},
+            {"idvariable": "2-az-l","talle": "L", "color": "Azul", "stock" : 3}
+
+        ]
     },
     { 
         "id": 3, 
         "nombre": "Remera oversize", 
         "categoria": "Remera", 
-        "precio": 10000 },
+        "precio": 10000,
+        "variantes" : [
+            {"idvariable": "3-ng-s","talle": "S", "color": "Negro", "stock" : 3},
+            {"idvariable": "3-ng-m","talle": "M", "color": "Negro", "stock" : 3},
+            {"idvariable": "3-ng-l","talle": "L", "color": "Negro", "stock" : 3},
+
+            {"idvariable": "3-az-s", "talle": "S", "color": "Azul", "stock" : 3},
+            {"idvariable": "3-az-m","talle": "M", "color": "Azul", "stock" : 3},
+            {"idvariable": "3-az-l","talle": "L", "color": "Azul", "stock" : 3}
+
+        ]
+    },
 
     { 
         "id": 4,
         "nombre": "Remera regular",
         "categoria": "Remera",
-        "precio": 9000 
+        "precio": 9000,
+        "variantes" : [
+            {"idvariable": "4-ng-s","talle": "S", "color": "Negro", "stock" : 3},
+            {"idvariable": "4-ng-m","talle": "M", "color": "Negro", "stock" : 3},
+            {"idvariable": "4-ng-l","talle": "L", "color": "Negro", "stock" : 3},
+
+            {"idvariable": "4-az-s", "talle": "S", "color": "Azul", "stock" : 3},
+            {"idvariable": "4-az-m","talle": "M", "color": "Azul", "stock" : 3},
+            {"idvariable": "4-az-l","talle": "L", "color": "Azul", "stock" : 3}
+
+        ]
     },
 
     { 
         "id": 5,
         "nombre": "Buzo",
         "categoria": "Abrigo",
-        "precio": 50000 
+        "precio": 50000,
+        "variantes" : [
+            {"idvariable": "5-ng-s","talle": "S", "color": "Negro", "stock" : 3},
+            {"idvariable": "5-ng-m","talle": "M", "color": "Negro", "stock" : 3},
+            {"idvariable": "5-ng-l","talle": "L", "color": "Negro", "stock" : 3},
+
+            {"idvariable": "5-az-s", "talle": "S", "color": "Azul", "stock" : 3},
+            {"idvariable": "5-az-m","talle": "M", "color": "Azul", "stock" : 3},
+            {"idvariable": "5-az-l","talle": "L", "color": "Azul", "stock" : 3}
+
+        ]
     },
 
     { 
         "id": 6,
         "nombre": "Campera Bomber",
         "categoria": "Abrigo",
-        "precio": 100000 
+        "precio": 100000,
+        "variantes" : [
+            {"idvariable": "6-ng-s","talle": "S", "color": "Negro", "stock" : 3},
+            {"idvariable": "6-ng-m","talle": "M", "color": "Negro", "stock" : 3},
+            {"idvariable": "6-ng-l","talle": "L", "color": "Negro", "stock" : 3},
+
+            {"idvariable": "6-az-s", "talle": "S", "color": "Azul", "stock" : 3},
+            {"idvariable": "6-az-m","talle": "M", "color": "Azul", "stock" : 3},
+            {"idvariable": "6-az-l","talle": "L", "color": "Azul", "stock" : 3}
+
+        ] 
     },
 
     { 
         "id": 7,
         "nombre": "Sweater",
         "categoria": "Abrigo",
-        "precio": 70000 
+        "precio": 70000,
+         "variantes" : [
+            {"idvariable": "7-ng-s","talle": "S", "color": "Negro", "stock" : 3},
+            {"idvariable": "7-ng-m","talle": "M", "color": "Negro", "stock" : 3},
+            {"idvariable": "7-ng-l","talle": "L", "color": "Negro", "stock" : 3},
+
+            {"idvariable": "7-az-s", "talle": "S", "color": "Azul", "stock" : 3},
+            {"idvariable": "7-az-m","talle": "M", "color": "Azul", "stock" : 3},
+            {"idvariable": "7-az-l","talle": "L", "color": "Azul", "stock" : 3}
+
+        ]
     },
 
     { 
         "id": 8,
         "nombre": "Musculosa",
         "categoria": "Remera",
-        "precio": 7500
+        "precio": 7500,
+        "variantes" : [
+            {"idvariable": "8-ng-s","talle": "S", "color": "Negro", "stock" : 3},
+            {"idvariable": "8-ng-m","talle": "M", "color": "Negro", "stock" : 3},
+            {"idvariable": "8-ng-l","talle": "L", "color": "Negro", "stock" : 3},
+
+            {"idvariable": "8-az-s", "talle": "S", "color": "Azul", "stock" : 3},
+            {"idvariable": "8-az-m","talle": "M", "color": "Azul", "stock" : 3},
+            {"idvariable": "8-az-l","talle": "L", "color": "Azul", "stock" : 3}
+
+        ]
     },
 
     { 
         "id": 9,
         "nombre": "Pantalon Corderoy",
         "categoria": "Pantalon",
-        "precio": 65000 
+        "precio": 65000,
+        "variantes" : [
+            {"idvariable": "9-ng-s","talle": "S", "color": "Negro", "stock" : 3},
+            {"idvariable": "9-ng-m","talle": "M", "color": "Negro", "stock" : 3},
+            {"idvariable": "9-ng-l","talle": "L", "color": "Negro", "stock" : 3},
+
+            {"idvariable": "9-az-s", "talle": "S", "color": "Azul", "stock" : 3},
+            {"idvariable": "9-az-m","talle": "M", "color": "Azul", "stock" : 3},
+            {"idvariable": "9-az-l","talle": "L", "color": "Azul", "stock" : 3}
+
+        ] 
     },
 
     { 
         "id": 10,
         "nombre": "Medias altas pack 3 unidades",
         "categoria": "Ropa interior",
-        "precio": 8000
+        "precio": 8000,
+        "variantes" : [
+            {"idvariable": "10-gr-u","talle": "Unico", "color": "Gris", "stock" : 3}
+        ]
+        
     },
 
      { 
         "id": 11,
         "nombre": "Boxer pack 3 unidades",
         "categoria": "Ropa interior",
-        "precio": 9000
+        "precio": 9000,
+        "variantes" : [
+            {"idvariable": "11-gr-u","talle": "Unico", "color": "Gris", "stock" : 3}
+        ]
     },
 
      { 
         "id": 12,
         "nombre": "Medias Invisibles pack 3 unidades",
         "categoria": "Ropa interior",
-        "precio": 7000
+        "precio": 7000,
+        "variantes" : [
+            {"idvariable": "12-gr-u","talle": "Unico", "color": "Gris", "stock" : 3}
+        ]
     }
 
 

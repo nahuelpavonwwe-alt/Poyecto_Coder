@@ -91,12 +91,28 @@ function renderCarrito() {
         const div = document.createElement("div");
 
         div.innerHTML =`
-        <p>${item.nombre} - $${item.precio}</p>
-        <button class="restar" data-id="${item.id}">-</button>
-        <span>${item.cantidad}</span>
-        <button class="sumar" data-id="${item.id}">+</button>
-        <button class="eliminar" data-id="${item.id}">ELIMINAR</button>
-        `;
+        
+            <p>${item.nombre} - ${item.talle} - ${item.color} $${item.precio}</p>
+
+            <button class="restar" 
+            data-id="${item.id}" 
+            data-color="${item.color}" 
+            data-talle="${item.talle}">-</button>
+
+            <span>${item.cantidad}</span>
+
+            <button class="sumar" 
+            data-id="${item.id}" 
+            data-color="${item.color}" 
+            data-talle="${item.talle}">+</button>
+
+            <button class="eliminar" 
+        data-id="${item.id}" 
+        data-color="${item.color}" 
+        data-talle="${item.talle}">
+        ELIMINAR
+        </button>
+    `;
         contenedor.appendChild(div)
     })
 }
