@@ -65,6 +65,7 @@ function renderProductos(productsArray) {
         })
         selectorColor += `</select>`
         card.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="img-producto">
             <h3>${producto.nombre}</h3>
             <h4>$${producto.precio}</h4>
             <label>Color :</label>

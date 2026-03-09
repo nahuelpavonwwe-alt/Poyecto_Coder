@@ -6,6 +6,7 @@
         "nombre": "Jean baggy", 
         "categoria": "Pantalon", 
         "precio": 45000,
+        "imagen": "./img/jean.jpg",
         "variantes" : [
             {"idvariable": "1-ng-s","talle": "S", "color": "Negro", "stock" : 3},
             {"idvariable": "1-ng-m","talle": "M", "color": "Negro", "stock" : 3},
@@ -21,6 +22,7 @@
         "nombre":"Jean slim fit",
         "categoria": "Pantalon",
         "precio": 40000,
+        "imagen": "./img/jeanslim.jpg",
         "variantes" : [
             {"idvariable": "2-ng-s","talle": "S", "color": "Negro", "stock" : 3},
             {"idvariable": "2-ng-m","talle": "M", "color": "Negro", "stock" : 3},
@@ -37,6 +39,7 @@
         "nombre": "Remera oversize", 
         "categoria": "Remera", 
         "precio": 10000,
+        "imagen": "./img/remeraover.jpg",
         "variantes" : [
             {"idvariable": "3-ng-s","talle": "S", "color": "Negro", "stock" : 3},
             {"idvariable": "3-ng-m","talle": "M", "color": "Negro", "stock" : 3},
@@ -54,6 +57,7 @@
         "nombre": "Remera regular",
         "categoria": "Remera",
         "precio": 9000,
+        "imagen": "./img/remeraregular.jpg",
         "variantes" : [
             {"idvariable": "4-ng-s","talle": "S", "color": "Negro", "stock" : 3},
             {"idvariable": "4-ng-m","talle": "M", "color": "Negro", "stock" : 3},
@@ -71,6 +75,7 @@
         "nombre": "Buzo",
         "categoria": "Abrigo",
         "precio": 50000,
+        "imagen": "./img/buzo.jpg",
         "variantes" : [
             {"idvariable": "5-ng-s","talle": "S", "color": "Negro", "stock" : 3},
             {"idvariable": "5-ng-m","talle": "M", "color": "Negro", "stock" : 3},
@@ -88,6 +93,7 @@
         "nombre": "Campera Bomber",
         "categoria": "Abrigo",
         "precio": 100000,
+        "imagen": "./img/bomber.jpg",
         "variantes" : [
             {"idvariable": "6-ng-s","talle": "S", "color": "Negro", "stock" : 3},
             {"idvariable": "6-ng-m","talle": "M", "color": "Negro", "stock" : 3},
@@ -105,6 +111,7 @@
         "nombre": "Sweater",
         "categoria": "Abrigo",
         "precio": 70000,
+        "imagen": "./img/sweater.jpg",
          "variantes" : [
             {"idvariable": "7-ng-s","talle": "S", "color": "Negro", "stock" : 3},
             {"idvariable": "7-ng-m","talle": "M", "color": "Negro", "stock" : 3},
@@ -122,6 +129,7 @@
         "nombre": "Musculosa",
         "categoria": "Remera",
         "precio": 7500,
+        "imagen": "./img/musculosa.jpg",
         "variantes" : [
             {"idvariable": "8-ng-s","talle": "S", "color": "Negro", "stock" : 3},
             {"idvariable": "8-ng-m","talle": "M", "color": "Negro", "stock" : 3},
@@ -139,6 +147,7 @@
         "nombre": "Pantalon Corderoy",
         "categoria": "Pantalon",
         "precio": 65000,
+        "imagen": "./img/corderoy.jpg",
         "variantes" : [
             {"idvariable": "9-ng-s","talle": "S", "color": "Negro", "stock" : 3},
             {"idvariable": "9-ng-m","talle": "M", "color": "Negro", "stock" : 3},
@@ -156,6 +165,7 @@
         "nombre": "Medias altas pack 3 unidades",
         "categoria": "Ropa interior",
         "precio": 8000,
+        "imagen": "./img/medias.jpg",
         "variantes" : [
             {"idvariable": "10-gr-u","talle": "Unico", "color": "Gris", "stock" : 3}
         ]
@@ -167,6 +177,7 @@
         "nombre": "Boxer pack 3 unidades",
         "categoria": "Ropa interior",
         "precio": 9000,
+        "imagen": "./img/boxer.jpg",
         "variantes" : [
             {"idvariable": "11-gr-u","talle": "Unico", "color": "Gris", "stock" : 3}
         ]
@@ -177,6 +188,7 @@
         "nombre": "Medias Invisibles pack 3 unidades",
         "categoria": "Ropa interior",
         "precio": 7000,
+        "imagen": "./img/invisible.jpg",
         "variantes" : [
             {"idvariable": "12-gr-u","talle": "Unico", "color": "Gris", "stock" : 3}
         ]
