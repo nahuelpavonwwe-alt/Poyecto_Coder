@@ -4,7 +4,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 const contenedor = document.getElementById("carrito");
 const botonVaciar = document.getElementById("vaciar-carrito");
 const totalElemento = document.getElementById("total");
-
+const fecha = dayjs().format("DD/MM/YYYY HH:mm")
 
 
 function guardarCarrito() {
@@ -152,6 +152,7 @@ function crearFactura (nombre, calle, altura, metodo) {
             <ul>${listaProductos}</ul>
             <p><strong>Total: </strong> $${total}</p>
             <p><strong>Metodo de pago :</strong> ${metodo}</p>
+            <p>Fecha de la compra: ${fecha}</p>
             `,
 
             icon: "success",
@@ -284,12 +285,12 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
                     Swal.showValidationMessage("El numero de seguridad solo debe tener numeros y ser menor a 5 digitos")
                     return false;
                 }
-            
+            }
 
-            return{ nombre, calle, altura, metodo };
+        return{ nombre, calle, altura, metodo };
 
         }
-    }
+    
     }).then((result) => {
 
         if (result.isConfirmed){

@@ -22,7 +22,6 @@ fetch(url)
         Swal.fire(
         "Error",
         "No se pudieron cargar los productos. Intente nuevamente más tarde.",
-        "error"
         );
     });
 
