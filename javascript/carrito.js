@@ -275,12 +275,12 @@ document.getElementById("btn-comprar").addEventListener("click", () => {
                     return false;
                     }
 
-                if (!/^\d+$/.test(numeroTarjeta)) {
-                    Swal.showValidationMessage("El numero de tarjeta solo debe tener numeros")
+                if (!/^\d{16}$/.test(numeroTarjeta)) {
+                    Swal.showValidationMessage("El numero de tarjeta solo debe tener 16 numeros")
                     return false;
                 }
 
-                if (!/^\d+$/.test(cvv)) {
+                if (!/^\d{3,4}$/.test(cvv)) {
                     Swal.showValidationMessage("El numero de seguridad solo debe tener numeros y ser menor a 5 digitos")
                     return false;
                 }
