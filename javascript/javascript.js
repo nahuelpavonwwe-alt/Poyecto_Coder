@@ -106,11 +106,6 @@ function agregarAlCarrito(id) {
 
     const talleSeleccionado = document.querySelector(`input[name="talle-${id}"]:checked`);
 
-    if (!color || !talleSeleccionado) {
-        Swal.fire("Seleccione un color y talle");
-        return;
-    }
-
     const talle = talleSeleccionado.value;
 
     const variante = producto.variantes.find(v =>

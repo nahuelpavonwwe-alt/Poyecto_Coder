@@ -150,3 +150,24 @@ text-align: center;
     margin-top: 10px;
 
 }
+
+.select-color{
+
+    width: 100%;
+    padding: 10px 14px;
+    margin-top: 5px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    border: 2px solid #ddd;
+    border-radius: 8px;
+
+    background-color: #fff;
+    color: #333;
+
+    cursor: pointer;
+
+   
+}
+
